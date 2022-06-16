@@ -1,0 +1,1 @@
+Girilen sayı kadar var olan bağlı listeyi sağa veya sola kaydırma yapar
