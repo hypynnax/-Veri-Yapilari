@@ -11,7 +11,7 @@ public class Liste {
             tail = dugum;
         } else {
             dugum.next = head;
-            head.prive = dugum;
+            head.prev = dugum;
             head = dugum;
         }
     }
@@ -22,7 +22,7 @@ public class Liste {
             tail = dugum;
         } else {
             tail.next = dugum;
-            dugum.prive = tail;
+            dugum.prev = tail;
             tail = dugum;
         }
     }
@@ -37,11 +37,11 @@ public class Liste {
         }
         if (indis == 1) {
             dugum.next = head;
-            head.prive = dugum;
+            head.prev = dugum;
             head = dugum;
         } else if (indis == i + 1) {
             tail.next = dugum;
-            dugum.prive = tail;
+            dugum.prev = tail;
             tail = dugum;
         } else {
             int j = 1;
@@ -50,10 +50,10 @@ public class Liste {
                 temp = tempSonrasi;
                 tempSonrasi = tempSonrasi.next;
             }
-            dugum.prive = temp;
+            dugum.prev = temp;
             temp.next = dugum;
             dugum.next = tempSonrasi;
-            tempSonrasi.prive = dugum;
+            tempSonrasi.prev = dugum;
         }
     }
 
@@ -66,8 +66,8 @@ public class Liste {
             tail = null;
         } else {
             head = head.next;
-            head.prive.next = null;
-            head.prive = null;
+            head.prev.next = null;
+            head.prev = null;
         }
     }
 
@@ -79,7 +79,7 @@ public class Liste {
             head = null;
             tail = null;
         } else {
-            tail = tail.prive;
+            tail = tail.prev;
             tail.next = null;
         }
     }
@@ -94,9 +94,9 @@ public class Liste {
         }
         if (indis == 1) {
             head = head.next;
-            head.prive = null;
+            head.prev = null;
         } else if (indis == i) {
-            tail = tail.prive;
+            tail = tail.prev;
             tail.next = null;
         } else {
             int j = 1;
@@ -105,7 +105,7 @@ public class Liste {
                 temp = tempSonrasi;
                 tempSonrasi = tempSonrasi.next;
             }
-            tempSonrasi.next.prive = temp;
+            tempSonrasi.next.prev = temp;
             temp.next = tempSonrasi.next;
         }
     }
@@ -125,7 +125,7 @@ public class Liste {
         System.out.print("son->");
         while (temp != null) {
             System.out.print(temp.veri + "->");
-            temp = temp.prive;
+            temp = temp.prev;
         }
         System.out.println("baş");
     }

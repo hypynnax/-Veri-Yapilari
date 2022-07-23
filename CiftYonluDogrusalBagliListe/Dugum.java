@@ -4,11 +4,11 @@ public class Dugum {
 
     int veri;
     Dugum next;
-    Dugum prive;
+    Dugum prev;
 
     public Dugum(int veri) {
         this.veri = veri;
         next = null;
-        prive = null;
+        prev = null;
     }
 }

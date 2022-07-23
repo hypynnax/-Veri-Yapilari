@@ -1,0 +1,1 @@
+Rastgele oluşturulan bir bağlı listedeki elemanları tek ve çift sayıların olduğu başka bir bağlı listeye ayırır
