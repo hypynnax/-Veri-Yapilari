@@ -12,8 +12,8 @@ public class Liste {
         } else {
             dugum.next = head;
             tail.next = dugum;
-            dugum.prive = tail;
-            head.prive = dugum;
+            dugum.prev = tail;
+            head.prev = dugum;
             head = dugum;
         }
     }
@@ -25,8 +25,8 @@ public class Liste {
         } else {
             tail.next = dugum;
             dugum.next = head;
-            head.prive = dugum;
-            dugum.prive = tail;
+            head.prev = dugum;
+            dugum.prev = tail;
             tail = dugum;
         }
     }
@@ -37,8 +37,8 @@ public class Liste {
         if (indis == 1) {
             dugum.next = head;
             tail.next = dugum;
-            dugum.prive = tail;
-            head.prive = dugum;
+            dugum.prev = tail;
+            head.prev = dugum;
             head = dugum;
         } else {
             int i = 1;
@@ -49,8 +49,8 @@ public class Liste {
             }
             dugum.next = tempSonrasi;
             temp.next = dugum;
-            dugum.prive = temp;
-            tempSonrasi.prive = dugum;
+            dugum.prev = temp;
+            tempSonrasi.prev = dugum;
         }
     }
 
@@ -63,7 +63,7 @@ public class Liste {
             System.out.println("Son eleman silindi");
         } else {
             head = head.next;
-            head.prive = tail;
+            head.prev = tail;
             tail.next = head;
         }
     }
@@ -84,7 +84,7 @@ public class Liste {
             }
             tail = temp;
             tail.next = head;
-            head.prive = tail;
+            head.prev = tail;
         }
     }
 
@@ -103,7 +103,7 @@ public class Liste {
         }
         if (indis == 1) {
             head = head.next;
-            head.prive = tail;
+            head.prev = tail;
             tail.next = head;
         } else if (indis == i) {
             while (tempSonrasi.next != head) {
@@ -112,7 +112,7 @@ public class Liste {
             }
             tail = temp;
             tail.next = head;
-            head.prive = tail;
+            head.prev = tail;
         } else {
             temp = null;
             tempSonrasi = head;
@@ -123,7 +123,7 @@ public class Liste {
                 tempSonrasi = tempSonrasi.next;
             }
             temp.next = tempSonrasi.next;
-            tempSonrasi.next.prive = temp;
+            tempSonrasi.next.prev = temp;
         }
     }
 
@@ -142,7 +142,7 @@ public class Liste {
         System.out.print("son->");
         do {
             System.out.print(temp.veri + "->");
-            temp = temp.prive;
+            temp = temp.prev;
         } while (temp != tail);
         System.out.println("baş");
     }
