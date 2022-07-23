@@ -16,13 +16,13 @@ public class Cember {
                 tail = radyan;
             } else {
                 tail.next = radyan;
-                radyan.prive = tail;
+                radyan.prev = tail;
                 tail = radyan;
             }
             i++;
         }
         tail.next = head;
-        head.prive = tail;
+        head.prev = tail;
     }
 
     void yazdir() {
@@ -38,7 +38,7 @@ public class Cember {
         String message;
         int i = 1;
         if (indis == 0) {
-            message = "0' radyanın karşılığı: " + temp.prive.radyan + "π";
+            message = "0' radyanın karşılığı: " + temp.prev.radyan + "π";
             JOptionPane.showMessageDialog(null, message);
         } else {
             while (indis != i) {

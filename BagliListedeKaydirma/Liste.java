@@ -2,43 +2,43 @@ package baglilistedekaydirma;
 
 public class Liste {
 
-    Dugum heap = null;
+    Dugum head = null;
     Dugum tail = null;
 
     void elemanEkle(Dugum dugum) {
-        if (heap == null) {
-            heap = dugum;
+        if (head == null) {
+            head = dugum;
             tail = dugum;
         } else {
             tail.next = dugum;
-            dugum.prive = tail;
+            dugum.prev = tail;
             tail = dugum;
-            tail.next = heap;
-            heap.prive = tail;
+            tail.next = head;
+            head.prev = tail;
         }
     }
 
     void sagaKaydir(int tekrar) {
         for (int i = 1; i <= tekrar; i++) {
-            heap = heap.prive;
+            head = head.prev;
         }
-        tail = heap.prive;
+        tail = head.prev;
     }
 
     void solaKaydir(int tekrar) {
         for (int i = 1; i <= tekrar; i++) {
-            heap = heap.next;
+            head = head.next;
         }
-        tail = heap.prive;
+        tail = head.prev;
     }
 
     void yazdir() {
-        Dugum temp = heap;
+        Dugum temp = head;
         System.out.print("baş ->");
         do {
             System.out.print(temp.veri + "->");
             temp = temp.next;
-        } while (temp != heap);
+        } while (temp != head);
         System.out.println("son");
     }
 }
