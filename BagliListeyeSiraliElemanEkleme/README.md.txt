@@ -1,1 +1,0 @@
-Hali hazırda var olan ve içindeki elemanları küçükten büyüğe sıralanan listeye dışardan girdi olarak gelen sayıyı listenin sıra yapısını bozmadan uygun yere yerleştirir
