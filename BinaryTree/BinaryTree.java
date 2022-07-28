@@ -1,0 +1,73 @@
+package binarytree;
+
+public class BinaryTree {
+
+    public static void main(String[] args) {
+        Agac agac = new Agac();
+        Dugum dugum1 = new Dugum(7);
+        Dugum dugum2 = new Dugum(4);
+        Dugum dugum3 = new Dugum(9);
+        Dugum dugum4 = new Dugum(1);
+        Dugum dugum5 = new Dugum(5);
+        Dugum dugum6 = new Dugum(8);
+        Dugum dugum7 = new Dugum(10);
+        Dugum dugum8 = new Dugum(3);
+        Dugum dugum9 = new Dugum(6);
+        Dugum dugum10 = new Dugum(12);
+        Dugum dugum11 = new Dugum(11);
+        agac.add(dugum1);
+        agac.add(dugum2);
+        agac.add(dugum3);
+        agac.add(dugum4);
+        agac.add(dugum5);
+        agac.add(dugum6);
+        agac.add(dugum7);
+        agac.add(dugum8);
+        agac.add(dugum9);
+        agac.add(dugum10);
+        agac.add(dugum11);
+        System.out.println(agac.derinlikBul());
+        agac.parentBul(dugum9);
+        agac.parentBul(dugum10);
+        agac.parentBul(dugum2);
+        agac.yukseklikBul(dugum1);
+        agac.yukseklikBul(dugum3);
+        agac.yukseklikBul(dugum7);
+        agac.yukseklikBul(dugum10);
+        agac.yukseklikBul(dugum11);
+        System.out.println("=========================================");
+        Dugum dugum21 = new Dugum(50);
+        Dugum dugum22 = new Dugum(20);
+        Dugum dugum23 = new Dugum(80);
+        Dugum dugum24 = new Dugum(10);
+        Dugum dugum25 = new Dugum(30);
+        Dugum dugum26 = new Dugum(70);
+        Dugum dugum27 = new Dugum(90);
+        Dugum dugum28 = new Dugum(100);
+        Dugum dugum29 = new Dugum(110);
+        Dugum dugum30 = new Dugum(120);
+        agac.add(dugum21);
+        agac.add(dugum22);
+        agac.add(dugum23);
+        agac.add(dugum24);
+        agac.add(dugum25);
+        agac.add(dugum26);
+        agac.add(dugum27);
+        agac.add(dugum28);
+        agac.add(dugum29);
+        agac.add(dugum30);
+        agac.yazdir();
+        System.out.println("+++++++++++++++");
+        agac.parentBul(dugum23);
+        System.out.println(agac.derinlikBul());
+        agac.yukseklikBul(dugum30);
+        agac.yukseklikBul(dugum28);
+        agac.yukseklikBul(dugum27);
+        agac.yukseklikBul(dugum26);
+        agac.yukseklikBul(dugum25);
+        agac.yukseklikBul(dugum24);
+        agac.yukseklikBul(dugum23);
+        agac.yukseklikBul(dugum22);
+        agac.yukseklikBul(dugum21);
+    }
+}
