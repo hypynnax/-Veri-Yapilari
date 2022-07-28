@@ -1,29 +1,29 @@
-package binarytree;
+package binarysearchtree;
 
-public class Agac {
+public class Tree {
 
-    private Dugum root = null;
+    private Node root = null;
     private int derinlik = 0;
 
     /**
      * Add metodu ağaca eleman ekleme işlemini yapar.
      */
-    void add(Dugum dugum) {
+    void add(Node node) {
         if (root == null) {
-            root = dugum;
+            root = node;
         } else {
-            Dugum temp = root;
+            Node temp = root;
             while (temp != null) {
-                if (temp.compareTo(dugum) < 0) {
+                if (temp.compareTo(node) < 0) {
                     if (temp.getRight() == null) {
-                        temp.setRight(dugum);
+                        temp.setRight(node);
                         return;
                     } else {
                         temp = temp.getRight();
                     }
                 } else {
                     if (temp.getLeft() == null) {
-                        temp.setLeft(dugum);
+                        temp.setLeft(node);
                         return;
                     } else {
                         temp = temp.getLeft();
@@ -44,7 +44,7 @@ public class Agac {
         return derinlik;
     }
 
-    private void derinlik(Dugum root, int tempDerinlik) {
+    private void derinlik(Node root, int tempDerinlik) {
         if (root != null) {
             if (root.getLeft() != null || root.getRight() != null) {
                 tempDerinlik++;
@@ -60,27 +60,27 @@ public class Agac {
      * Yükseklik bul metodu gelen düğüm tipindeki nesnenin bulunduğu yüksekliği
      * bulur ve yazdırır.
      */
-    void yukseklikBul(Dugum dugum) {
+    void yukseklikBul(Node node) {
         int yukseklik = 0;
         int derinik = derinlikBul();
-        int dugumDerinik = dugumDerinligiBul(dugum);
+        int dugumDerinik = dugumDerinligiBul(node);
         yukseklik = derinik - dugumDerinik;
         System.out.println(yukseklik);
     }
 
-    private int dugumDerinligiBul(Dugum dugum) {
+    private int dugumDerinligiBul(Node node) {
         derinlik = 0;
         int tempDerinlik = 0;
-        dugumDerinligi(root, tempDerinlik, dugum);
+        dugumDerinligi(root, tempDerinlik, node);
         return derinlik;
     }
 
-    private void dugumDerinligi(Dugum root, int tempDerinlik, Dugum dugum) {
+    private void dugumDerinligi(Node root, int tempDerinlik, Node node) {
         if (root != null) {
-            if (root.getLeft() != dugum && root.getRight() != dugum) {
+            if (root.getLeft() != node && root.getRight() != node) {
                 tempDerinlik++;
-                dugumDerinligi(root.getLeft(), tempDerinlik, dugum);
-                dugumDerinligi(root.getRight(), tempDerinlik, dugum);
+                dugumDerinligi(root.getLeft(), tempDerinlik, node);
+                dugumDerinligi(root.getRight(), tempDerinlik, node);
             } else {
                 tempDerinlik++;
                 derinlik = tempDerinlik;
@@ -92,18 +92,18 @@ public class Agac {
      * Parent bul metodu gelen düğüm tipindeki nesnenin üst elemanını bulur ve
      * ekrana yazdırır.
      */
-    void parentBul(Dugum dugum) {
-        parent(root, dugum);
+    void parentBul(Node node) {
+        parent(root, node);
     }
 
-    private void parent(Dugum parent, Dugum dugum) {
+    private void parent(Node parent, Node node) {
         if (parent != null) {
-            if (parent.getLeft() == dugum || parent.getRight() == dugum) {
+            if (parent.getLeft() == node || parent.getRight() == node) {
                 System.out.println(parent);
                 return;
             } else {
-                parent(parent.getLeft(), dugum);
-                parent(parent.getRight(), dugum);
+                parent(parent.getLeft(), node);
+                parent(parent.getRight(), node);
             }
         }
     }
@@ -115,32 +115,32 @@ public class Agac {
      * metodu ise ilk verinin sol ve sağındaki değerler yazılır ve sonunda veri
      * yazılır.
      */
-    private void preOrder(Dugum dugum) {
-        if (dugum != null) {
-            System.out.println(dugum.getVeri());
-            preOrder(dugum.getLeft());
-            preOrder(dugum.getRight());
+    private void preOrder(Node node) {
+        if (node != null) {
+            System.out.println(node.getData());
+            preOrder(node.getLeft());
+            preOrder(node.getRight());
         }
     }
 
-    private void inOrder(Dugum dugum) {
-        if (dugum != null) {
-            inOrder(dugum.getLeft());
-            System.out.println(dugum.getVeri());
-            inOrder(dugum.getRight());
+    private void inOrder(Node node) {
+        if (node != null) {
+            inOrder(node.getLeft());
+            System.out.println(node.getData());
+            inOrder(node.getRight());
         }
     }
 
-    private void postOrder(Dugum dugum) {
-        if (dugum != null) {
-            postOrder(dugum.getLeft());
-            postOrder(dugum.getRight());
-            System.out.println(dugum.getVeri());
+    private void postOrder(Node node) {
+        if (node != null) {
+            postOrder(node.getLeft());
+            postOrder(node.getRight());
+            System.out.println(node.getData());
         }
     }
 
     void yazdir() {
-        Dugum temp = root;
+        Node temp = root;
         preOrder(temp);
         System.out.println("*************");
         inOrder(temp);

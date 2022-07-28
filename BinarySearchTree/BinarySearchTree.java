@@ -1,0 +1,73 @@
+package binarysearchtree;
+
+public class BinarySearchTree {
+
+    public static void main(String[] args) {
+        Tree tree = new Tree();
+        Node node1 = new Node(7);
+        Node node2 = new Node(4);
+        Node node3 = new Node(9);
+        Node node4 = new Node(1);
+        Node node5 = new Node(5);
+        Node node6 = new Node(8);
+        Node node7 = new Node(10);
+        Node node8 = new Node(3);
+        Node node9 = new Node(6);
+        Node node10 = new Node(12);
+        Node node11 = new Node(11);
+        tree.add(node1);
+        tree.add(node2);
+        tree.add(node3);
+        tree.add(node4);
+        tree.add(node5);
+        tree.add(node6);
+        tree.add(node7);
+        tree.add(node8);
+        tree.add(node9);
+        tree.add(node10);
+        tree.add(node11);
+        System.out.println(tree.derinlikBul());
+        tree.parentBul(node9);
+        tree.parentBul(node10);
+        tree.parentBul(node2);
+        tree.yukseklikBul(node1);
+        tree.yukseklikBul(node3);
+        tree.yukseklikBul(node7);
+        tree.yukseklikBul(node10);
+        tree.yukseklikBul(node11);
+        System.out.println("=========================================");
+        Node node21 = new Node(50);
+        Node node22 = new Node(20);
+        Node node23 = new Node(80);
+        Node node24 = new Node(10);
+        Node node25 = new Node(30);
+        Node node26 = new Node(70);
+        Node node27 = new Node(90);
+        Node node28 = new Node(100);
+        Node node29 = new Node(110);
+        Node node30 = new Node(120);
+        tree.add(node21);
+        tree.add(node22);
+        tree.add(node23);
+        tree.add(node24);
+        tree.add(node25);
+        tree.add(node26);
+        tree.add(node27);
+        tree.add(node28);
+        tree.add(node29);
+        tree.add(node30);
+        tree.yazdir();
+        System.out.println("+++++++++++++++");
+        tree.parentBul(node23);
+        System.out.println(tree.derinlikBul());
+        tree.yukseklikBul(node30);
+        tree.yukseklikBul(node28);
+        tree.yukseklikBul(node27);
+        tree.yukseklikBul(node26);
+        tree.yukseklikBul(node25);
+        tree.yukseklikBul(node24);
+        tree.yukseklikBul(node23);
+        tree.yukseklikBul(node22);
+        tree.yukseklikBul(node21);
+    }
+}
